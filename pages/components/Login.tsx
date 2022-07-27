@@ -1,7 +1,5 @@
 import type { NextPage } from 'next'
-import { useRef , useEffect } from "react"
 import styles from '/styles/Home.module.css'
-import Image from 'next/image'
 
 const Login: NextPage = () => {
   return (
