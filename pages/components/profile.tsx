@@ -58,6 +58,7 @@ const Profile: NextPage<ProfileProps> = ({ setCurScreen, setUser}) => {
           setActive(++active);
         }
       } else if (e.code === "Enter" && active > 1) {
+        console.log(active)
         setCurScreen("main");
       }
     };
@@ -68,10 +69,8 @@ const Profile: NextPage<ProfileProps> = ({ setCurScreen, setUser}) => {
   }, []);
 
   useEffect(() => {
-    console.log("State changed: ", active);
     let diff :number = active - 2;
     diff *= -1;
-    console.log(diff);
     let width = 125;
     let padding = 3;
     let margin = 40;
@@ -90,6 +89,7 @@ const Profile: NextPage<ProfileProps> = ({ setCurScreen, setUser}) => {
       >
         {users.map((u) => (
           <div
+            key={`profile_`+u.id}
             className={`${styles.user} ${
               active === u.id ? styles.activeUser : ""
             }`}

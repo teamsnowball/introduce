@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import styles from '/styles/Home.module.css'
+import styles from '/styles/Controller.module.css'
 import React, { useEffect , useState } from "react"
 import EnterSvg from '/public/subdirectory_arrow_left_black_24dp.svg';
 import BackSpaceSvg from '/public/arrow_right_alt_black_24dp.svg';
