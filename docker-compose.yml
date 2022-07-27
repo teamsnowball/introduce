@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  test:
+    image : introduce:latest
+    build : ./
+    privileged: true
+    restart: always
+    ports:
+      - "80:80"
