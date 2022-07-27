@@ -24,7 +24,7 @@ const users: Users[] = [
   },
   {
     add_user: false,
-    name: "Portfolio",
+    name: "Tech",
     imgUrl: "/profile.jpg",
     id: 2,
   },
@@ -57,9 +57,21 @@ const Profile: NextPage<ProfileProps> = ({ setCurScreen, setUser}) => {
           setControllerOptions({ animationDelay: "0.25s" });
           setActive(++active);
         }
-      } else if (e.code === "Enter" && active > 1) {
-        console.log(active)
-        setCurScreen("main");
+      } else if (e.code === "Enter") {
+        switch(active) {
+          case 1 : {
+            window.open(
+              'https://github.com/PobyCoder',
+              '_blank'
+            );
+          }
+          case 2 : {
+
+          }
+          case 3 : {
+
+          }
+        }
       }
     };
     document.addEventListener("keydown", listener);
