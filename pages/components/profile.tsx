@@ -2,6 +2,8 @@ import { NextPage } from "next";
 import React, { useState, useEffect, SetStateAction } from "react";
 import styles from "/styles/Profile.module.css";
 import Follow from '/public/favorite_border_black_24dp.svg';
+import { useRouter } from 'next/router'
+
 
 type Users = {
     add_user: Boolean;
@@ -11,7 +13,6 @@ type Users = {
 }
 
 type ProfileProps = {
-    setCurScreen: any;
     setUser: any;
 };
 
@@ -36,7 +37,8 @@ const users: Users[] = [
   },
 ];
 
-const Profile: NextPage<ProfileProps> = ({ setCurScreen, setUser}) => {
+const Profile: NextPage<ProfileProps> = ({setUser}) => {
+  const router = useRouter()
   const min = users[0].id;
   const max = users[users.length - 1].id;
   let [active, setActive] = useState(2);
@@ -58,19 +60,26 @@ const Profile: NextPage<ProfileProps> = ({ setCurScreen, setUser}) => {
           setActive(++active);
         }
       } else if (e.code === "Enter") {
+        console.log(active)
         switch(active) {
           case 1 : {
             window.open(
               'https://github.com/PobyCoder',
               '_blank'
-            );
+            )
           }
+          break
           case 2 : {
-
+            router.push("/tech")
           }
+          break
           case 3 : {
-
+            window.open(
+              'https://solid-alto-1b6.notion.site/Full-Stack-Developer-b8de066d2e0944c58c7ba8d4e6d6378d',
+              '_blank'
+            )
           }
+          break
         }
       }
     };

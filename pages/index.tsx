@@ -7,12 +7,11 @@ import Profile from './components/profile'
 
 const Home: NextPage = () => {
   const [user, setUser] = useState(undefined);
-  const [curScreen, setCurScreen] = useState("start");
   return (
     <div className={styles.container}>
       <Login />
       <Controller />
-      <Profile setCurScreen={setCurScreen} setUser={setUser}/>
+      <Profile setUser={setUser}/>
     </div>
   )
 }
